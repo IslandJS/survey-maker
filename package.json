@@ -1,0 +1,21 @@
+{
+  "name": "survey-maker",
+  "version": "1.0.0",
+  "description": "Rest based server for making and conducting simple surveys.",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf surveys.json; node_modules/lab/bin/lab -c -l test"
+  },
+  "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
+  "license": "GPL3",
+  "dependencies": {
+    "lowdb": "^0.7.1",
+    "restify": "^2.8.5",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp-flowtype": "^0.4.3",
+    "hamjest": "^2.9.1",
+    "lab": "^5.2.1"
+  }
+}
