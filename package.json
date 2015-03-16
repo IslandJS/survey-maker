@@ -1,9 +1,10 @@
 {
-  "name": "survey-maker",
+  "name": "survey-maker-api",
   "version": "1.0.0",
   "description": "Rest based server for making and conducting simple surveys.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "rm -rf surveys.json; node_modules/lab/bin/lab -c -l test"
   },
   "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
@@ -11,6 +12,8 @@
   "dependencies": {
     "lowdb": "^0.7.1",
     "restify": "^2.8.5",
+    "underscore": "^1.8.2",
+    "underscore-db": "^0.8.1",
     "uuid": "^2.0.1"
   },
   "devDependencies": {
