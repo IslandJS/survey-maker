@@ -1,35 +1,41 @@
-var hamjest = require('hamjest');
-for (var k in hamjest) {
-  global[k] = hamjest[k];
-}
-
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
+var server = require('../lib/server.js');
+var hippie = require('hippie');
+
 var test = lab.test;
 var experiment = lab.experiment;
 
-var simple = {
-  "Have you programmed before?" : [true,false],
-  "For how many years?" : [[0,1],[1,2],[2,5],[5,10],[10,20]],
-  "How interested are you in programming?" : [
-    'somewhat interested', 'interested','very interested'],
-};
-
-lab.before(function(done) {
-  console.log('before.');
-  done();
-});
-
-lab.after(function(done) {
-  console.log('after.');
-  done();
-});
-
 experiment('REST API', function() {
+  test('/survey', function(done) {
+    hippie(server)
+      .expectStatus(200)
+      .post('/survey/rest-test')
+      .form()
+      .json()
+      .send({
+        Name : 'Test' ,
+        Email : 'test@email.test',
+        Volunteering : 'true',
+        Interests : 'Helping others.',
+        Program : 'true',
+        Years : 10,
+        Languages : ['blockly','java','javascript','c','cpp']
+      })
+      .end(function (err, res, body) {
+        if (err) throw err;
+        done();
+      })
+  });
 
-  test('/survey route', function(done) {
-      fail('empty test');
-      done();
+  test('/results', function(done) {
+    hippie(server)
+      .json()
+      .expectStatus(200)
+      .get('/results/simple')
+      .end(function(err, res, body) {
+        if (err) throw err;
+        done();
+      });
   });
 });
-

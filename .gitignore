@@ -1,2 +1,3 @@
 node_modules
 survey.json
+.coverage_data
