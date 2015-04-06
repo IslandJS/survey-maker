@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "clean" : "rm -rf survey.json; rm -rf cover_html;",
-    "coverage": "node_modules/cover/bin/cover run test/api.js; node_modules/cover/bin/cover run test/rest.js; node_modules/cover/bin/cover run test/validators.js; node_modules/cover/bin/cover combine; node_modules/cover/bin/cover report html",
+    "clean": "rm -rf survey.json; rm -rf coverage",
+    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/lab/bin/lab -l test; node_modules/istanbul/lib/cli.js report",
     "test": "rm -rf survey.json; node_modules/lab/bin/lab -c -l test"
   },
   "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
   "license": "GPL3",
   "dependencies": {
+    "istanbul": "^0.3.13",
     "lowdb": "^0.7.1",
     "restify": "^2.8.5",
     "underscore": "^1.8.2",
