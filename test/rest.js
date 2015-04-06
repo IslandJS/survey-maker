@@ -32,7 +32,7 @@ experiment('REST API', function() {
     hippie(server)
       .json()
       .expectStatus(200)
-      .get('/results/simple')
+      .get('/results/rest-test')
       .end(function(err, res, body) {
         if (err) throw err;
         done();

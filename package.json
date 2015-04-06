@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "clean": "rm -rf survey.json; rm -rf coverage",
-    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/lab/bin/lab -l test; node_modules/istanbul/lib/cli.js report",
-    "test": "rm -rf survey.json; node_modules/lab/bin/lab -c -l test"
+    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/lab/bin/lab test; node_modules/istanbul/lib/cli.js report",
+    "test": "rm -rf survey.json; node_modules/lab/bin/lab -l test"
   },
   "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
   "license": "GPL3",
