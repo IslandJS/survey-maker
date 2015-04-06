@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "rm -rf surveys.json; node_modules/lab/bin/lab -c -l test"
+    "clean": "rm -rf survey.json; rm -rf coverage",
+    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/lab/bin/lab test; node_modules/istanbul/lib/cli.js report",
+    "test": "rm -rf survey.json; node_modules/lab/bin/lab -l test"
   },
   "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
   "license": "GPL3",
   "dependencies": {
+    "istanbul": "^0.3.13",
     "lowdb": "^0.7.1",
     "restify": "^2.8.5",
     "underscore": "^1.8.2",
@@ -17,8 +20,9 @@
     "uuid": "^2.0.1"
   },
   "devDependencies": {
-    "gulp-flowtype": "^0.4.3",
+    "cover": "^0.2.9",
     "hamjest": "^2.9.1",
+    "hippie": "^0.3.0",
     "lab": "^5.2.1"
   }
 }
