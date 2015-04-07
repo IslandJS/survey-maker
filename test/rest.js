@@ -9,13 +9,15 @@ var experiment = lab.experiment;
 experiment('REST API', function() {
   test('/survey', function(done) {
     hippie(server)
-      .expectStatus(200)
+      .expectStatus(201)
       .post('/survey/rest-test')
       .form()
       .json()
+      .header('Content-Type', 'application/json')
       .send({
         Name : 'Test' ,
         Email : 'test@email.test',
+        Survey : 'NodeSchool',
         Volunteering : 'true',
         Interests : 'Helping others.',
         Program : 'true',
