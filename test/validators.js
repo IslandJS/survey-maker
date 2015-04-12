@@ -10,21 +10,41 @@ var experiment = lab.experiment;
 var validator = require('../lib/validator.js');
 
 experiment('you can validate answers ...', function() {
+
   var simple = {
-          "Have you programmed before?" : [true,false],
-        "For how many years?" : [[0,1],[1,2],[3,5],[5,10],[10,20]],
-        "How interested are you in programming?" : [
-          'somewhat interested', 'interested','very interested'],
-      };
+    "Programmed" : [true,false],
+    "Years" : 0,
+    "Interested" : [
+      'somewhat interested', 'interested','very interested'],
+    };
 
-    var answers = [
-      [true, 20, 'very interested'], [false, 0, 'interested'],[true, 2, 'somewhat interested']
-    ];
+    test('that are correct', function(done) {
+      var answers = [
+        { Programmed: true, Years: 20, Interested: 'very interested'},
+        { Programmed: true, Years: 15, Interested: 'somewhat interested'},
+        { Programmed: false, Years: 0, Interested: 'interested'}
+      ];
 
-    test('with a basic response', function(done) {
-      var result = validator.validate('experiment 1', simple, answers);
+      answers.forEach(function(answer) {
+        debugger;
+        var result = validator.validate(simple, answer);
 
-      assertThat(result, is(true));
+        assertThat(result, is(true));
+      })
       done();
     });
-});
+    test('and catch those that are incorrect', function (done) {
+      var answers = [
+        { Programmed : 20, Years: 'very', Interested: true}
+      ];
+
+      answers.forEach(function(answer) {
+        try {
+          var result = validator.validate(simple, answer);
+          fail('Validator should throw assertion errors!');
+        } catch (AssertionError) {
+        }
+      })
+      done();
+    });
+  });
