@@ -20,7 +20,6 @@
     "uuid": "^2.0.1"
   },
   "devDependencies": {
-    "cover": "^0.2.9",
     "hamjest": "^2.9.1",
     "hippie": "^0.3.0",
     "lab": "^5.2.1"
