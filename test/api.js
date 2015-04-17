@@ -31,6 +31,7 @@ experiment('you can create surveys ... ', function() {
 
 experiment('and take them ...', function() {
   test('such as a simple survey with one answer', function(done) {
+    debugger;
     maker.register("simple", simple);
     var survey = maker.find("simple");
     var answer = [true, 1, 'very interested'];
