@@ -12,6 +12,7 @@
   "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
   "license": "GPL3",
   "dependencies": {
+    "bunyan": "^1.3.5",
     "istanbul": "^0.3.13",
     "lowdb": "^0.7.1",
     "restify": "^2.8.5",
