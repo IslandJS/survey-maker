@@ -43,8 +43,8 @@ experiment('you can validate answers ...', function() {
           var result = validator.validate(simple, answer);
           fail('Validator should throw assertion errors!');
         } catch (AssertionError) {
+          done();
         }
       })
-      done();
     });
   });

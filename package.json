@@ -1,5 +1,5 @@
 {
-  "name": "survey-maker-api",
+  "name": "survey-maker",
   "version": "1.0.0",
   "description": "Rest based server for making and conducting simple surveys.",
   "main": "index.js",
@@ -24,5 +24,8 @@
     "hamjest": "^2.9.1",
     "hippie": "^0.3.0",
     "lab": "^5.2.1"
+  },
+  "options": {
+    "port": "3000"
   }
 }

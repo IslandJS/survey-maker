@@ -1,6 +1,7 @@
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
-var server = require('../lib/server.js');
+var pkg = require('../package.json');
+var server = require('../lib/server.js')(pkg.options.port);
 var hippie = require('hippie');
 
 var test = lab.test;
