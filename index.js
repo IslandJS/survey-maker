@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
  * Survey Maker
  *   index.js, starts the server.

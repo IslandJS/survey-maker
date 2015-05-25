@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Rest based server for making and conducting simple surveys.",
   "main": "index.js",
+  "bin" : { "survey-maker" : "index.js" },
   "scripts": {
     "start": "node index.js",
     "clean": "rm -rf survey.json; rm -rf coverage",
@@ -11,6 +12,9 @@
   },
   "author": "\"Andrew Waterman\" <awaterma@awaterma.net>",
   "license": "GPL3",
+  "bugs" : {
+    "url" : "https://github.com/IslandJS/survey-maker/issues"
+  },
   "dependencies": {
     "bunyan": "^1.3.5",
     "istanbul": "^0.3.13",
