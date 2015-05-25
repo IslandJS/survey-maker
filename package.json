@@ -1,6 +1,6 @@
 {
   "name": "survey-maker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Rest based server for making and conducting simple surveys.",
   "main": "index.js",
   "bin" : { "survey-maker" : "index.js" },

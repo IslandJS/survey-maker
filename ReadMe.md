@@ -2,19 +2,13 @@
 
 _Host your own simple surveys!_
 
-Configure this basic rest server to listen on the port of your liking
-either through the package.json file:
+Configure this basic survey server to listen on the port of your liking
+on the command line:
 
-    "options" : {
-        "port": "value of your choice"
-     }
+    $ survey-maker 2015
 
- Or on the command line:
-
-    $ node index.js 2015
-
- Once the server is listening, post to the "survey" URL to create a new
- survey:
+Once the server is listening, post to the "survey" URL to create a new
+survey:
 
 
     $ curl --data "{
